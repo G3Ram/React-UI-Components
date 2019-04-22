@@ -3,7 +3,7 @@
 .header {
   display: flex;
   width: 100%;
-  padding: 15px 0px 0px 5px;
+  padding: 20px 0px 0px 10px;
 }
 
 .imageThumbnail {
@@ -30,7 +30,7 @@
 
 .subTitle {
   font-size: 1.6rem;
-  color: gray;
+  color: lightgray;
   padding: 5px 10px;
   letter-spacing: 1px;
 }
