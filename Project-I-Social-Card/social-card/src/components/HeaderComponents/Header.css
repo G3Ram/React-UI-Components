@@ -1,1 +1,10 @@
 /* All styles for your header Components live here */
+
+.header {
+  border: 1px solid red;
+}
+
+.imageThumbnail {
+  width: 100px;
+  border: 1px solid green;
+}
