@@ -9,27 +9,49 @@ class CalculatorDisplay extends React.Component {
     super(props);
     this.state = {
       displayValue: [],
-      isEqualTo: false,
-      initialValue: true
+      isEqualTo: false
     };
   }
 
   handleClick(displayTextValue) {
     console.log(`Value clicked is ${displayTextValue}`);
-    if (displayTextValue !== "=") {
-      const dispVal = this.state.displayValue.slice();
-      dispVal.push(displayTextValue);
-      this.setState({
-        displayValue: dispVal,
-        isEqualTo: false,
-        initialValue: true
-      });
-    }
     if (displayTextValue === "clear") {
       this.setState({
-        displayValue: [],
-        isEqualTo: false,
-        initialValue: true
+        displayValue: []
+      });
+    } else if (displayTextValue === "=") {
+      console.log("yet to be implemented = clicked");
+    } else if (
+      displayTextValue === "+" ||
+      displayTextValue === "-" ||
+      displayTextValue === "*" ||
+      displayTextValue === "/"
+    ) {
+      console.log("operator clicked -> implementing");
+      const dispVal = this.state.displayValue.slice();
+      dispVal.push(displayTextValue);
+      dispVal.push("");
+      this.setState({
+        displayValue: dispVal
+      });
+    } else {
+      console.log(`Value clicked is ${displayTextValue}`);
+
+      const dispVal = this.state.displayValue.slice();
+      console.log(`dispVal length is ${dispVal.length}`);
+      if (dispVal.length === 0) {
+        dispVal.push(parseInt(displayTextValue));
+        console.log(`dispVal  is ${dispVal}`);
+      } else {
+        if (dispVal[dispVal.length - 1] === "") {
+          dispVal[dispVal.length - 1] = 0;
+        }
+        dispVal[dispVal.length - 1] =
+          dispVal[dispVal.length - 1] * 10 + parseInt(displayTextValue);
+      }
+      console.log(`Display value is ${dispVal}`);
+      this.setState({
+        displayValue: dispVal
       });
     }
     console.log(this.state.displayValue);
@@ -49,14 +71,25 @@ class CalculatorDisplay extends React.Component {
 
   renderTextDisplay(classNameValue) {
     if (this.state.displayValue.length === 0) {
+      console.log(this.state.displayValue);
       return <DisplayText text={0} className={classNameValue} />;
     } else {
-      return (
-        <DisplayText
-          text={this.state.displayValue}
-          className={classNameValue}
-        />
-      );
+      const len = this.state.displayValue.length;
+      if (this.state.displayValue[len - 1] === "") {
+        return (
+          <DisplayText
+            text={this.state.displayValue[len - 3]}
+            className={classNameValue}
+          />
+        );
+      } else {
+        return (
+          <DisplayText
+            text={this.state.displayValue[len - 1]}
+            className={classNameValue}
+          />
+        );
+      }
     }
   }
 
