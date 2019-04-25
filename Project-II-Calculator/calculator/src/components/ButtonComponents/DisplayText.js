@@ -1,7 +1,7 @@
 import React from "react";
 import "./Button.css";
 
-const ActionButton = props => {
+const DisplayText = props => {
   return (
     <div>
       <button className={props.className}>{props.text}</button>
@@ -9,4 +9,4 @@ const ActionButton = props => {
   );
 };
 
-export default ActionButton;
+export default DisplayText;

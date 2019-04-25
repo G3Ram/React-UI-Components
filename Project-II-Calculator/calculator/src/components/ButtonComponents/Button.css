@@ -1,0 +1,39 @@
+.displayButton {
+  width: 455px;
+  height: 130px;
+  background-color: black;
+  color: white;
+  font-size: 5rem;
+  text-align: right;
+  padding-right: 10px;
+}
+
+.actionButton {
+  width: 335px;
+  height: 95px;
+  background-color: white;
+  color: black;
+  font-size: 3rem;
+  margin: 0px;
+  padding: 0px;
+}
+
+.redNumberButton {
+  width: 120px;
+  height: 95px;
+  background-color: brown;
+  color: white;
+  font-size: 3rem;
+  margin: 0px;
+  padding: 0px;
+}
+
+.numberButton {
+  width: 112px;
+  height: 95px;
+  background-color: white;
+  color: black;
+  font-size: 3rem;
+  margin: 0px;
+  padding: 0px;
+}

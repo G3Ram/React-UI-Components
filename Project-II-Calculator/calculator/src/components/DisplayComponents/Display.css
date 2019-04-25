@@ -1,0 +1,12 @@
+.calculatorDisplay {
+  margin-left: 30%;
+  margin-top: 2%;
+  font-family: "Lato", sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.displayRow {
+  display: flex;
+  flex-direction: row;
+}
